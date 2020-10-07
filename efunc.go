@@ -50,6 +50,15 @@ func LogError(l *log.Logger, e error) bool {
     return false
 }
 
+// LogAndExit logs error and exit app
+func LogAndExit(e error) bool {
+    if e != nil {
+        log.Fatalln(e)
+
+    }
+    return false
+}
+
 // ExitDueTo performs exit with optionally given code
 // By default code is 1
 func ExitDueTo(e error, c ...int) bool {
