@@ -41,8 +41,8 @@ func PrintError(e error) bool {
 	return false
 }
 
-// LogError logs error with given logger
-func LogError(l *log.Logger, e error) bool {
+// LogWith logs error with given logger
+func LogWith(l *log.Logger, e error) bool {
 	if e != nil {
 		l.Println(e)
 		return true
@@ -79,3 +79,11 @@ func Exit(e error) bool {
 
 // Nothing just does nothing
 func Nothing(error) bool { return false }
+
+// Check checks error state and returns true or false
+func Check(e error) bool {
+	if e != nil {
+		return true
+	}
+	return false
+}
